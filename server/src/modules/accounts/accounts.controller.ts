@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AccountsService } from './accounts.service';
+import { CreateAccountDto } from '../common/dto/create-account.dto';
 
 @Controller('accounts')
 export class AccountsController {
@@ -11,7 +12,7 @@ export class AccountsController {
   }
 
   @Post()
-  async create(@Body('name') name: string) {
+  async create(@Body('name') dto: CreateAccountDto) {
     return this.accountsService.create(name);
   }
 }

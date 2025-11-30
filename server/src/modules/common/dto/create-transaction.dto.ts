@@ -1,4 +1,4 @@
-import { IsUUID, IsNumber, IsString, IsOptional, IsDateString } from 'class-validator';
+import { IsUUID, IsNumber, IsString, IsOptional, IsDateString, Min } from 'class-validator';
 
 export class CreateTransactionDto {
   @IsUUID()
@@ -8,10 +8,11 @@ export class CreateTransactionDto {
   category_id: string;
 
   @IsNumber()
+  @Min(0)
   amount: number;
 
-  @IsOptional()
   @IsString()
+  @IsOptional()
   description?: string;
 
   @IsDateString()
