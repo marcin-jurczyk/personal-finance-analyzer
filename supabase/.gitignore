@@ -1,0 +1,9 @@
+# ignore supabase temp files and accidental installs
+.temp/
+node_modules/
+package.json
+package-lock.json
+.env
+
+# macOS
+.DS_Store
